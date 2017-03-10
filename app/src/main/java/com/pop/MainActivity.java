@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fab:
 
                 bottomPopupOption = new BottomPopupOption(MainActivity.this);
-                bottomPopupOption.setItemText("男", "女","无","智障");
+                bottomPopupOption.setItemText("男", "女","无","逗");
                 // bottomPopupOption.setColors();//设置颜色
                 bottomPopupOption.showPopupWindow();
                 bottomPopupOption.setItemClickListener(new Mylistener());
