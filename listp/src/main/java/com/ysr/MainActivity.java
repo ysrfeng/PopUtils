@@ -1,6 +1,7 @@
 package com.ysr;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String[] mlistText = {"男", "女"};
     private List<String> data;
     private MyAdapter adapter;
-
+    private   AlertDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,14 +54,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 wv.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
                     @Override
                     public void onSelected(int selectedIndex, String item) {
-                        Log.d("tag", "[Dialog]selectedIndex: " + selectedIndex + ", item: " + item);
+                        //Log.d("tag", "[Dialog]selectedIndex: " + selectedIndex + ", item: " + item);
                     }
                 });
-
-                AlertDialog dialog=     new AlertDialog.Builder(this)
+                dialog = new AlertDialog.Builder(this)
                         .setTitle(null)
                         .setView(outerView)
-                        .setPositiveButton("OK", null)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.d("tag", "[Dialog]which: " + which);
+                            }
+                        })
                         .show();
                 //设置弹窗在底部
                 Window window = dialog.getWindow();

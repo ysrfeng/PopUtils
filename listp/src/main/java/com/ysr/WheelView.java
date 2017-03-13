@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -242,10 +243,10 @@ public class WheelView extends ScrollView {
             }
             if (position == i) {
                 itemView.setTextColor(Color.parseColor("#181818"));
-               // itemView.setTypeface(Typeface.SANS_SERIF,Typeface.BOLD);
+                itemView.setTypeface(Typeface.SANS_SERIF,Typeface.BOLD);
             } else {
                 itemView.setTextColor(Color.parseColor("#bbbbbb"));
-               // itemView.setTypeface(Typeface.DEFAULT);
+                itemView.setTypeface(Typeface.DEFAULT);
             }
         }
     }
